@@ -27,7 +27,7 @@ jobs:
           yarn build
 
       - name: Compress artifacts
-        run: zip release.zip build/* -r
+        run: pushd build && zip release.zip * -r && popd
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
