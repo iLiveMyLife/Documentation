@@ -1,4 +1,4 @@
-name: Build and deploy a container to an Azure Web App
+name: Build and push to ACR & GitHub
 
 env:
   AZURE_WEBAPP_NAME: dockerosaurus
