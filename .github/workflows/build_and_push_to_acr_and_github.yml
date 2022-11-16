@@ -49,6 +49,6 @@ jobs:
         with:
           push: true
           tags: |
-            env.ACR_TAG
+            ${{ env.ACR_TAG }}
             ghcr.io/${{ env.REPO }}:${{ github.sha }}
           file: ./Dockerfile
