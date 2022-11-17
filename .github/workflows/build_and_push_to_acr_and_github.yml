@@ -39,7 +39,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Compose ACR image tag name
-        run: echo "ACR_TAG=${{ secrets.DOCKEROSAURUS_ACR_LOGIN_SERVER }}/dockerosaurus:${{ github.sha }}" >>${GITHUB_ENV} && echo ${GITHUB_ENV} 
+        run: |
+          echo "ACR_TAG=${{ secrets.DOCKEROSAURUS_ACR_LOGIN_SERVER }}/dockerosaurus:${{ github.sha }}" >>${GITHUB_ENV}
+          cat  ${GITHUB_ENV}
         
       - name: Lowercase the GitHub repo name
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
