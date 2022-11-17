@@ -1,4 +1,4 @@
-name: Build and push to ACR & GitHub
+name: Release - Build and push to ACR & GitHub
 
 env:
   AZURE_WEBAPP_NAME: dockerosaurus
