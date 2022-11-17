@@ -27,7 +27,7 @@ jobs:
       - name: Log in to ACR container registry
         uses: docker/login-action@v1.10.0
         with:
-          registry: ${{ env.ACR_LOGIN_SERVER }}
+          registry: ${{ secrets.DOCKEROSAURUS_ACR_LOGIN_SERVER }}
           username: ${{ secrets.DOCKEROSAURUS_ACR_USERNAME }}
           password: ${{ secrets.DOCKEROSAURUS_ACR_PASSWORD }}
           
