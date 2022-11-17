@@ -2,7 +2,6 @@ name: Build and push to ACR & GitHub
 
 env:
   AZURE_WEBAPP_NAME: dockerosaurus
-  ACR_LOGIN_SERVER: dockerosaurusacr.azurecr.io
 
 on:
   push:
@@ -40,7 +39,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Compose ACR image tag name
-        run: echo "ACR_TAG=dockerosaurusacr.azurecr.io/dockerosaurus:${{ github.sha }}" >>${GITHUB_ENV}
+        run: echo "ACR_TAG=${{ secrets.DOCKEROSAURUS_ACR_LOGIN_SERVER }}/dockerosaurus:${{ github.sha }}" >>${GITHUB_ENV} && echo ${GITHUB_ENV} 
         
       - name: Lowercase the GitHub repo name
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
