@@ -41,7 +41,7 @@ jobs:
 
       - name: Compose ACR image tag name
         run: |
-          echo "ACR_TAG=${{ secrets.ACR_LOGIN_SERVER }}/dockerosaurus:${{ github.sha }}" >>${GITHUB_ENV}
+          echo "ACR_TAG=${{ env.ACR_LOGIN_SERVER }}/dockerosaurus:${{ github.sha }}" >>${GITHUB_ENV}
           cat  ${GITHUB_ENV}
         
       - name: Lowercase the GitHub repo name
